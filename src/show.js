@@ -1,7 +1,14 @@
 class Show {
-  constructor(){
+  constructor(data){
     this.noteList = document.getElementById("notes-list")
+    this.showingNote = document.getElementById("third-column")
+    this.title = data.title;
+    this.id = data.id;
+    this.user = data.user;
+    this.body = data.body;
+    console.log(this.title)
   }
+
 
   renderForm(){
     // let body = document.body
@@ -20,14 +27,14 @@ class Show {
     submit.setAttribute("class", "submit")
 
     let inputContent = document.createElement("textarea")
-    inputContent.setAttribute("cols", "170")
+    inputContent.setAttribute("cols", "150")
     inputContent.setAttribute("placeholder", "Title")
     inputContent.setAttribute("id", "title")
 
     let inputBody = document.createElement("textarea")
     inputBody.setAttribute("placeholder", "Content")
-    inputBody.setAttribute("rows", "100")
-    inputBody.setAttribute("cols", "170")
+    inputBody.setAttribute("rows", "43")
+    inputBody.setAttribute("cols", "150")
     inputBody.setAttribute("id", "body")
 
     form.append(submit)
@@ -38,6 +45,48 @@ class Show {
     formDiv.append(div)
 
     this.submitButtonEvent()
+  }
+
+  render(){
+    let formDiv = document.getElementById("third-column")
+    let div = document.createElement("div")
+    formDiv.append(div)
+
+    let form = document.createElement("form")
+    form.setAttribute("id", "form")
+
+    // TODO get userid
+    // form.setAttribute("data-userid", )
+
+    let submit = document.createElement("input")
+    submit.setAttribute("type", "submit")
+    submit.setAttribute("class", "submit")
+
+    let inputContent = document.createElement("textarea")
+    inputContent.setAttribute("cols", "150")
+    inputContent.setAttribute("placeholder", "Title")
+    inputContent.setAttribute("id", "title")
+    inputContent.innerText = this.title
+
+    let inputBody = document.createElement("textarea")
+    inputBody.setAttribute("placeholder", "Content")
+    inputBody.setAttribute("rows", "43")
+    inputBody.setAttribute("cols", "150")
+    inputBody.setAttribute("id", "body")
+    inputBody.innerText = this.body
+
+
+    form.append(submit)
+    form.append(inputContent)
+    form.append(inputBody)
+    // form.append(submit)
+
+    div.append(form)
+    formDiv.append(div)
+
+
+    this.submitButtonEvent()
+
   }
 
   submitButtonEvent(){

@@ -8,6 +8,17 @@
   padding: auto;
 }
 
+.submit{
+  border-radius: 12px;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.submit:hover{
+  background-color: #8d9db6;
+  color: white;
+}
+
 #first-column{
   padding: 10px;
 }
@@ -20,19 +31,17 @@
   padding: 10px;
 }
 
-.boton{
-  margin: 0 auto;
-  width: 100px;
-}
 
 .button {
   border-radius: 100%;
   font-size: 18px;
   padding: 10px 10px;
+  background-color: #8d9db6
+  color: white;
 }
 
 .button:hover {
-    background-color: #667292;
+    background-color: #8d9db6;
     color: white;
 }
 
@@ -43,6 +52,6 @@ p{
 
 .wrapper{
   display: grid;
-  grid-template-columns: 8% 32% 60%;
+  grid-template-columns: 4% 26% auto;
   grid-auto-rows: minmax(200px, auto)
 }

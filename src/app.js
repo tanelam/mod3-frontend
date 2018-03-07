@@ -21,7 +21,7 @@ class App {
     // console.log(button)
     button.addEventListener("click", event => {
       let newShow = new Show();
-       newShow.renderForm()
+       newShow.render()
     })
   }
 
