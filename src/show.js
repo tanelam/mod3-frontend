@@ -4,41 +4,45 @@ class Show {
   }
 
   renderForm(){
-    let body = document.body
+    // let body = document.body
+    let formDiv = document.getElementById("third-column")
     let div = document.createElement("div")
-    body.append(div)
+    formDiv.append(div)
 
     let form = document.createElement("form")
     form.setAttribute("id", "form")
 
+    // TODO get userid
+    // form.setAttribute("data-userid", )
+
     let submit = document.createElement("input")
     submit.setAttribute("type", "submit")
-    submit.setAttribute("value", "submit")
     submit.setAttribute("class", "submit")
 
-    let inputContent = document.createElement("input")
-    inputContent.setAttribute("type", "text")
+    let inputContent = document.createElement("textarea")
+    inputContent.setAttribute("cols", "170")
     inputContent.setAttribute("placeholder", "Title")
     inputContent.setAttribute("id", "title")
 
     let inputBody = document.createElement("textarea")
     inputBody.setAttribute("placeholder", "Content")
-    inputBody.setAttribute("rows", "20")
-    inputBody.setAttribute("cols", "100")
+    inputBody.setAttribute("rows", "100")
+    inputBody.setAttribute("cols", "170")
     inputBody.setAttribute("id", "body")
 
+    form.append(submit)
     form.append(inputContent)
     form.append(inputBody)
-    form.append(submit)
+    // form.append(submit)
     div.append(form)
-    body.append(div)
+    formDiv.append(div)
 
     this.submitButtonEvent()
   }
 
   submitButtonEvent(){
-    let submitButtons = document.getElementsByClassName("submit")
 
+    let submitButtons = document.getElementsByClassName("submit")
     // console.log(submitButtons)
     for (let i = 0; i < submitButtons.length; i++){
     submitButtons[i].addEventListener("click", () => {
@@ -46,8 +50,14 @@ class Show {
        // console.log("hello")
        let title = document.getElementById("title").value
        let body = document.getElementById("body").value
+        console.log(title)
+        // debugger
+
        this.postNote(title, body)
-      })
+
+       document.getElementById("title").value = ""
+       document.getElementById("body").value = ""
+       })
     }
   }
 

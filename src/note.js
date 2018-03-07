@@ -3,27 +3,34 @@ class Note {
     this.id = data.id;
     this.title = data.title;
     this.body = data.body;
-    Note.all.push(this);
+    // Note.all.push(this);
     this.noteList = document.getElementById("notes-list")
   }
 
-  renderListItem(note){
-    let li = document.createElement('li')
-    let header = document.createElement('h3')
+  renderNoteList(json){
+    for(let i = 0; i < json.length; i++){
+        // console.log(json[i])
+    let note = json[i]
 
-    header.innerText = this.title
+    let div = document.createElement('div')
+    div.setAttribute("class", "notes-container")
+    let header = document.createElement("p")
+    let li = document.createElement("li")
+    li.innerText = note.body
+    header.innerText = note.title
 
-    li.appendChild(header)
-    this.noteList.appendChild(li)
+    div.appendChild(header)
+    this.noteList.appendChild(div)
 
+    header.addEventListener("click", () => {
+      console.log("mouse check")
+
+    })
+   }
   }
 
-  // findById(id){
-  //   console.log(this.note);
-  //   console.log(id);
-  //   return this.all.find(note => this.note.id === id)
-  // }
+
 
 }
 
-Note.all = []
+// Note.all = []

@@ -1,0 +1,48 @@
+.notes-container:hover {
+    background-color: #667292;
+    color: white;
+}
+
+.notes-container {
+  text-align: center;
+  padding: auto;
+}
+
+#first-column{
+  padding: 10px;
+}
+
+#second-column{
+  padding: 10px;
+}
+
+#third-column{
+  padding: 10px;
+}
+
+.boton{
+  margin: 0 auto;
+  width: 100px;
+}
+
+.button {
+  border-radius: 100%;
+  font-size: 18px;
+  padding: 10px 10px;
+}
+
+.button:hover {
+    background-color: #667292;
+    color: white;
+}
+
+p{
+  font-size: 30;
+  font-family: 'Oswald', sans-serif;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 8% 32% 60%;
+  grid-auto-rows: minmax(200px, auto)
+}
