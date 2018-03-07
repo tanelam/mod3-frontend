@@ -1,6 +1,6 @@
 class App {
   constructor(){
-    this.attachEventListeners()
+    this.attachEventListener()
     this.noteList = document.getElementById("notes-list")
   }
 
@@ -14,7 +14,6 @@ class App {
         this.noteList.append(new Note(note).renderListItem(note));
       })
     })
-    .then(() => this.attachEventListeners())
 }
 
   fetchUsers(){
@@ -23,21 +22,13 @@ class App {
     .then(json => console.log(json))
   }
 
-
-  attachEventListeners(){
-    let buttons = document.getElementsByClassName('buttonName')
-    console.log(buttons);
-    for (let i = 0; i < buttons.length; i++){
-    buttons[i].addEventListener("click", event => {
-      // let noteId = event.target.dataset.id
-      let noteId = event.target.dataset.id
-
-      // note.findById(noteId)
-      console.log("hello")
-      console.log(noteId)
-      })
-    }
+  attachEventListener(){
+    let button = document.getElementById("create-button")
+    // console.log(button)
+    button.addEventListener("click", event => {
+      let newShow = new Show();
+       newShow.renderForm()
+    })
   }
-
 
 }
