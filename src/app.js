@@ -16,12 +16,12 @@ class App {
     .then(json => console.log(json))
   }
 
-  attachEventListener(){
+  attachEventListener(json){
     let button = document.getElementById("create-button")
     // console.log(button)
     button.addEventListener("click", event => {
       let newShow = new Show();
-       newShow.render()
+       newShow.renderForm()
     })
   }
 

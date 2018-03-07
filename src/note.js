@@ -40,14 +40,14 @@ class Note {
 
     fetch(`http://localhost:3000/api/v1/notes/${noteId}`)
     .then(resp => resp.json())
-    .then(json => this.showNote(json))
+    .then(json => console.log(json))
   }
-
-  showNote(json){
-    let newShow = new Show(json)
-    newShow.render();
-    console.log(this.showingNote)
-  }
+  //
+  // showNote(json){
+  //   let newShow = new Show(json)
+  //   newShow.render();
+  //   // console.log(this.showingNote)
+  // }
 
 
 

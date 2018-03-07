@@ -1,12 +1,12 @@
 class Show {
   constructor(data){
+    console.log(data);
     this.noteList = document.getElementById("notes-list")
     this.showingNote = document.getElementById("third-column")
-    this.title = data.title;
-    this.id = data.id;
-    this.user = data.user;
-    this.body = data.body;
-    console.log(this.title)
+    // this.title = data.title;
+    // this.id = data.id;
+    // this.user = data.user;
+    // this.body = data.body;
   }
 
 
@@ -46,7 +46,7 @@ class Show {
 
     this.submitButtonEvent()
   }
-
+  //
   render(){
     let formDiv = document.getElementById("third-column")
     let div = document.createElement("div")
