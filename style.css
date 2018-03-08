@@ -19,6 +19,26 @@
   color: white;
 }
 
+#title{
+  font-size: 18px;
+  font-family: 'Quattrocento', serif;
+}
+
+#body{
+  font-size: 20px;
+  font-family: 'Pontano Sans', sans-serif;
+}
+
+#delete-button{
+  border-radius: 12px;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+}
+
+#delete-button:hover{
+  background-color: #8d9db6;
+  color: white;
+}
 
 #first-column{
   padding: 10px;
@@ -26,7 +46,7 @@
 
 #second-column{
   padding: 10px;
-  
+
 }
 
 #third-column{
@@ -56,4 +76,5 @@ p{
   display: grid;
   grid-template-columns: 4% 26% auto;
   grid-auto-rows: minmax(200px, auto)
+
 }
